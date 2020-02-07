@@ -39,6 +39,8 @@ def main():
     result = ""
     for press in presses:
         Bytes = press.split(":")
+        if len(Bytes) != 8:
+            continue
         if Bytes[0] == "00":
             if Bytes[2] != "00":
                 result += normalKeys[Bytes[2]]
