@@ -14,15 +14,15 @@ shiftKeys = {"04":"A", "05":"B", "06":"C", "07":"D", "08":"E", "09":"F", "0a":"G
 def main():
     # check argv
     if len(sys.argv) != 2:
-        print "Usage : "
-        print "        python UsbKeyboardHacker.py data.pcap"
-        print "Tips : "
-        print "        To use this python script , you must install the tshark first."
-        print "        You can use `sudo apt-get install tshark` to install it"
-        print "Author : "
-        print "        WangYihang <wangyihanger@gmail.com>"
-        print "        If you have any questions , please contact me by email."
-        print "        Thank you for using."
+        print("Usage : ")
+        print("        python UsbKeyboardHacker.py data.pcap")
+        print("Tips : ")
+        print("        To use this python script , you must install the tshark first.")
+        print("        You can use `sudo apt-get install tshark` to install it")
+        print("Author : ")
+        print("        WangYihang <wangyihanger@gmail.com>")
+        print("        If you have any questions , please contact me by email.")
+        print("        Thank you for using.")
         exit(1)
 
     # get argv
@@ -46,8 +46,8 @@ def main():
             if Bytes[2] != "00":
                 result += shiftKeys[Bytes[2]]
         else:
-            print "[-] Unknow Key : %s" % (Bytes[0])
-    print "[+] Found : %s" % (result)
+            print("[-] Unknow Key : %s" % (Bytes[0]))
+    print("[+] Found : %s" % (result))
 
     # clean the temp data
     os.system("rm ./%s" % (DataFileName))
